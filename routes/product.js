@@ -1,6 +1,8 @@
 // imports.
 import express from "express"
 import { getDb } from "../data/database.js"
+import { isValidProduct, hasID } from "../utils/validation.js"
+import { generateRandomId } from "../utils/generalFunctions.js"
 
 
 // konfigurationer.
@@ -14,17 +16,36 @@ router.get("/", async (req, res) => {
   res.send(db.data.products)
 })
 
-router.get("/:id", (req, res) => {
-  res.sendStatus(200)
+router.get("/:id", async (req, res) => {
+  let maybeiId = Number(req.params.id)
+
+  if( isNaN(maybeiId) || maybeiId < 0 ) {
+    res.sendStatus(400)
+    return
+  }
+
+  await db.read()
+  let maybeProduct = db.data.products.find(product =>
+    product.id === maybeiId)
+
+  if (!maybeProduct) {
+    res.sendStatus(404)
+    return
+  }
+
+  res.send(maybeProduct)
 })
 
 // Post request.
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   let maybeProduct = req.body
 
 
   if(isValidProduct(maybeProduct)) {
-
+    await db.read()
+    maybeProduct.id = generateRandomId()
+    db.data.products.push(maybeProduct)
+    await db.write()
     res.sendStatus(200)
   } else {
 
@@ -32,39 +53,34 @@ router.post("/", (req, res) => {
     res.sendStatus(400)
   }
 })
-function isValidProduct(p) {
-  if( (typeof p) !== "object" || p === null ) {
-    return false
+
+// Put request.
+
+
+
+// Delete request.
+router.delete("/:id", async (req, res) => {
+  let maybeiId = Number(req.params.id)
+
+  if( isNaN(maybeiId) || maybeiId < 0 ) {
+    res.sendStatus(400)
+    return
   }
 
-  let nameIsValid = (typeof p.name) === "string"
-  nameIsValid = nameIsValid && p.name !== ""
-  let priceIsValid = (typeof p.price) === "number"
-  priceIsValid = priceIsValid && p.price >= 0
-  let imageIsValid = (typeof p.image) === "string"
-  imageIsValid = imageIsValid && p.image !== ""
-  let tagsIsValid = (typeof p.tags) === ["string"]
-  tagsIsValid = tagsIsValid && p.tags !== [""]
+  await db.read()
+  let maybeProduct = db.data.products.find(product =>
+    product.id === maybeiId)
 
-  if(!nameIsValid) {
-    return false
-  }else if(!priceIsValid) {
-    return false
-  }else if(!imageIsValid) {
-    return false
-  }else if(!tagsIsValid) {
-    return false
+  if (!maybeProduct) {
+    res.sendStatus(404)
+    return
   }
 
-  return true
-}
-
-function hasID(object) {
-  let idIsValid = (typeof object.id) === "number"
-  idIsValid = idIsValid && object.id >= 0
-  
-  return idIsValid
-}
+  db.data.products = db.data.products.filter(product =>
+    product.id !== maybeiId)
+  await db.write()
+  res.sendStatus(200)
+})
 
 
 

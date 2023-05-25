@@ -16,148 +16,226 @@
       "password": "michael789"
     }
   ],
-
   "products": [
     {
       "id": 1,
       "name": "iPhone 12",
       "price": 999,
       "image": "https://example.com/iphone12.jpg",
-      "tags": ["electronics", "smartphone", "Apple"]
+      "tags": [
+        "electronics",
+        "smartphone",
+        "Apple"
+      ]
     },
     {
       "id": 2,
       "name": "Samsung Galaxy S21",
       "price": 899,
       "image": "https://example.com/galaxys21.jpg",
-      "tags": ["electronics", "smartphone", "Samsung"]
+      "tags": [
+        "electronics",
+        "smartphone",
+        "Samsung"
+      ]
     },
     {
       "id": 3,
       "name": "Sony WH-1000XM4",
       "price": 349,
       "image": "https://example.com/wh1000xm4.jpg",
-      "tags": ["electronics", "headphones", "Sony"]
+      "tags": [
+        "electronics",
+        "headphones",
+        "Sony"
+      ]
     },
     {
       "id": 4,
       "name": "Nintendo Switch",
       "price": 299,
       "image": "https://example.com/nintendoswitch.jpg",
-      "tags": ["electronics", "gaming", "Nintendo"]
+      "tags": [
+        "electronics",
+        "gaming",
+        "Nintendo"
+      ]
     },
     {
       "id": 5,
       "name": "Canon EOS R5",
       "price": 3899,
       "image": "https://example.com/eosr5.jpg",
-      "tags": ["electronics", "camera", "Canon"]
+      "tags": [
+        "electronics",
+        "camera",
+        "Canon"
+      ]
     },
     {
       "id": 6,
       "name": "Dell XPS 13",
       "price": 1199,
       "image": "https://example.com/xps13.jpg",
-      "tags": ["electronics", "laptop", "Dell"]
+      "tags": [
+        "electronics",
+        "laptop",
+        "Dell"
+      ]
     },
     {
       "id": 7,
       "name": "Fitbit Versa 3",
       "price": 229,
       "image": "https://example.com/fitbitversa3.jpg",
-      "tags": ["electronics", "wearable", "Fitbit"]
+      "tags": [
+        "electronics",
+        "wearable",
+        "Fitbit"
+      ]
     },
     {
       "id": 8,
       "name": "KitchenAid Stand Mixer",
       "price": 399,
       "image": "https://example.com/kitchenaidmixer.jpg",
-      "tags": ["home", "kitchen", "appliances"]
+      "tags": [
+        "home",
+        "kitchen",
+        "appliances"
+      ]
     },
     {
       "id": 9,
       "name": "Roomba Robot Vacuum",
       "price": 499,
       "image": "https://example.com/roombavacuum.jpg",
-      "tags": ["home", "cleaning", "robotics"]
+      "tags": [
+        "home",
+        "cleaning",
+        "robotics"
+      ]
     },
     {
       "id": 10,
       "name": "Bose QuietComfort 35 II",
       "price": 299,
       "image": "https://example.com/quietcomfort35ii.jpg",
-      "tags": ["electronics", "headphones", "Bose"]
+      "tags": [
+        "electronics",
+        "headphones",
+        "Bose"
+      ]
     },
     {
       "id": 11,
       "name": "LG OLED C1",
       "price": 1999,
       "image": "https://example.com/oledc1.jpg",
-      "tags": ["electronics", "TV", "LG"]
+      "tags": [
+        "electronics",
+        "TV",
+        "LG"
+      ]
     },
     {
       "id": 12,
       "name": "Microsoft Surface Pro 7",
       "price": 1299,
       "image": "https://example.com/surfacepro7.jpg",
-      "tags": ["electronics", "tablet", "Microsoft"]
+      "tags": [
+        "electronics",
+        "tablet",
+        "Microsoft"
+      ]
     },
     {
       "id": 13,
       "name": "Nespresso VertuoPlus",
       "price": 199,
       "image": "https://example.com/nespressovertuoplus.jpg",
-      "tags": ["home", "coffee", "appliances"]
+      "tags": [
+        "home",
+        "coffee",
+        "appliances"
+      ]
     },
     {
       "id": 14,
       "name": "GoPro HERO9 Black",
       "price": 449,
       "image": "https://example.com/goprohero9.jpg",
-      "tags": ["electronics", "camera", "GoPro"]
+      "tags": [
+        "electronics",
+        "camera",
+        "GoPro"
+      ]
     },
     {
       "id": 15,
       "name": "Apple AirPods Pro",
       "price": 249,
       "image": "https://example.com/airpodspro.jpg",
-      "tags": ["electronics", "headphones", "Apple"]
+      "tags": [
+        "electronics",
+        "headphones",
+        "Apple"
+      ]
     },
     {
       "id": 16,
       "name": "Google Pixel 6",
       "price": 799,
       "image": "https://example.com/pixel6.jpg",
-      "tags": ["electronics", "smartphone", "Google"]
+      "tags": [
+        "electronics",
+        "smartphone",
+        "Google"
+      ]
     },
     {
       "id": 17,
       "name": "Samsung QLED Q80A",
       "price": 1499,
       "image": "https://example.com/qledq80a.jpg",
-      "tags": ["electronics", "TV", "Samsung"]
+      "tags": [
+        "electronics",
+        "TV",
+        "Samsung"
+      ]
     },
     {
       "id": 18,
       "name": "Amazon Echo Dot (4th Gen)",
       "price": 59,
       "image": "https://example.com/echodot4.jpg",
-      "tags": ["electronics", "smart speaker", "Amazon"]
+      "tags": [
+        "electronics",
+        "smart speaker",
+        "Amazon"
+      ]
     },
     {
       "id": 19,
       "name": "Fitbit Charge 4",
       "price": 149,
       "image": "https://example.com/fitbitcharge4.jpg",
-      "tags": ["electronics", "wearable", "Fitbit"]
+      "tags": [
+        "electronics",
+        "wearable",
+        "Fitbit"
+      ]
     },
     {
       "id": 20,
       "name": "Sony PlayStation 5",
       "price": 499,
       "image": "https://example.com/playstation5.jpg",
-      "tags": ["electronics", "gaming", "Sony"]
+      "tags": [
+        "electronics",
+        "gaming",
+        "Sony"
+      ]
     }
   ]
-  
 }

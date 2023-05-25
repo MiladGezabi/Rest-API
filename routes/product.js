@@ -1,7 +1,7 @@
 // imports.
 import express from "express"
 import { getDb } from "../data/database.js"
-import { isValidProduct, hasID } from "../utils/validation.js"
+import { isValidProduct, hasID, isValidId } from "../utils/validation.js"
 import { generateRandomId } from "../utils/generalFunctions.js"
 
 
@@ -17,16 +17,16 @@ router.get("/", async (req, res) => {
 })
 
 router.get("/:id", async (req, res) => {
-  let maybeiId = Number(req.params.id)
-
-  if( isNaN(maybeiId) || maybeiId < 0 ) {
+  
+  if( !isValidId(req.params.id) ) {
     res.sendStatus(400)
     return
   }
+  let id = Number(req.params.id)
 
   await db.read()
   let maybeProduct = db.data.products.find(product =>
-    product.id === maybeiId)
+    product.id === id)
 
   if (!maybeProduct) {
     res.sendStatus(404)
@@ -55,21 +55,50 @@ router.post("/", async (req, res) => {
 })
 
 // Put request.
+router.put("/:id", async (req, res) => {
+  if( !isValidId(req.params.id) ) {
+    res.sendStatus(400)
+    return
+  }
+  let id = Number(req.params.id)
+
+
+  if( !isValidProduct(req.body) ){
+    res.sendStatus(400)
+    return
+  }
+
+  let updatedProduct = req.body
+
+  await db.read()
+  let originalProductIndex = db.data.products.findIndex(product =>
+    product.id === id)
+  
+  if(originalProductIndex === -1) {
+    res.sendStatus(404)
+    return
+  }
+
+  updatedProduct.id = generateRandomId()
+  db.data.products[originalProductIndex] = updatedProduct
+  await db.write()
+  res.sendStatus(200)
+})
 
 
 
 // Delete request.
 router.delete("/:id", async (req, res) => {
-  let maybeiId = Number(req.params.id)
-
-  if( isNaN(maybeiId) || maybeiId < 0 ) {
+  
+  if( !isValidId(req.params.id) ) {
     res.sendStatus(400)
     return
   }
+  let id = Number(req.params.id)
 
   await db.read()
   let maybeProduct = db.data.products.find(product =>
-    product.id === maybeiId)
+    product.id === id)
 
   if (!maybeProduct) {
     res.sendStatus(404)
@@ -77,7 +106,7 @@ router.delete("/:id", async (req, res) => {
   }
 
   db.data.products = db.data.products.filter(product =>
-    product.id !== maybeiId)
+    product.id !== id)
   await db.write()
   res.sendStatus(200)
 })

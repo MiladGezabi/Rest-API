@@ -32,4 +32,13 @@ function hasID(object) {
   return idIsValid
 }
 
-export {isValidProduct, hasID}
+function isValidId(id) {
+  let maybeId = Number(id)
+
+  if( isNaN(maybeId )) {
+    return false
+  }
+  return maybeId >= 0
+}
+
+export {isValidProduct, hasID, isValidId}

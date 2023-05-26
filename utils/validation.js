@@ -41,4 +41,24 @@ function isValidId(id) {
   return maybeId >= 0
 }
 
-export {isValidProduct, hasID, isValidId}
+function isValidUser(u) {
+
+  if ( (typeof u) !== "object" || u === null ) {
+    return false
+  }
+
+  let nameIsValid = (typeof u.name) === "string"
+  nameIsValid = nameIsValid && u.name !== ""
+  let passwordIsValid = (typeof u.password) === "string"
+  passwordIsValid = passwordIsValid && u.password !== ""
+
+  if(!nameIsValid){
+    return false
+  }else if(!passwordIsValid) {
+    return false
+  }
+
+  return true
+}
+
+export {isValidProduct, hasID, isValidId, isValidUser}

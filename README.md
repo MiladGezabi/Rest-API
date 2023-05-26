@@ -76,3 +76,11 @@ Exempel på svar:
     }
         ...
 ]
+
+
+
+ GET /users: Retrieves all users.
+ GET /users/:id: Retrieves a specific user by ID.
+ POST /users: Creates a new user.
+ PUT /users/:id: Updates a user with a specific ID.
+ DELETE /users/:id: Deletes a user with a specific ID.

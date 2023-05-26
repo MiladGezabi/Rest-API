@@ -2,6 +2,7 @@
 import express from "express"
 import productRouter from "./routes/product.js"
 import userRouter from './routes/user.js'
+import searchRouter from './routes/search.js'
 
 
 
@@ -15,6 +16,7 @@ server.use("/api", express.json())
 // routes.
 server.use("/api/products", productRouter)
 server.use("/api/users", userRouter)
+server.use("/api/search", searchRouter)
 
 // init.
 

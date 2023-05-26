@@ -5,9 +5,12 @@ import { isValidProduct, hasID, isValidId } from "../utils/validation.js"
 import { generateRandomId } from "../utils/generalFunctions.js"
 
 
+
+
 // konfigurationer.
 const router = express.Router()
 const db = getDb()
+
 
 
 // Get requests.

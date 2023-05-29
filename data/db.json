@@ -14,6 +14,36 @@
       "id": 3,
       "name": "Michael Johnson",
       "password": "michael789"
+    },
+    {
+      "name": "Grogu McYoda",
+      "password": "may-4th",
+      "id": 917605917
+    },
+    {
+      "name": "Grogu McYoda",
+      "password": "may-4th",
+      "id": 416637124
+    },
+    {
+      "name": "Grogu McYoda",
+      "password": "may-4th",
+      "id": 952013296
+    },
+    {
+      "name": "Grogu McYoda",
+      "password": "may-4th",
+      "id": 292565318
+    },
+    {
+      "name": "Grogu McYoda",
+      "password": "may-4th",
+      "id": 522951772
+    },
+    {
+      "name": "Grogu McYoda",
+      "password": "may-4th",
+      "id": 409090265
     }
   ],
   "products": [
@@ -235,6 +265,54 @@
         "electronics",
         "gaming",
         "Sony"
+      ]
+    },
+    {
+      "name": "Banan",
+      "price": 5,
+      "image": "morot.jpg",
+      "tags": [
+        "crunchy",
+        "nutritious"
+      ],
+      "id": 85030275
+    },
+    {
+      "name": "Banan",
+      "price": 5,
+      "image": "morot.jpg",
+      "tags": [
+        "crunchy",
+        "nutritious"
+      ],
+      "id": 650759788
+    },
+    {
+      "name": "Banan",
+      "price": 5,
+      "image": "morot.jpg",
+      "tags": [
+        "crunchy",
+        "nutritious"
+      ],
+      "id": 282313997
+    },
+    {
+      "id": 488513786,
+      "name": "Morot",
+      "price": 18,
+      "image": "fikon.png",
+      "tags": [
+        "juicy"
+      ]
+    },
+    {
+      "id": 807361834,
+      "name": "Morot",
+      "price": 18,
+      "image": "fikon.png",
+      "tags": [
+        "juicy"
       ]
     }
   ]

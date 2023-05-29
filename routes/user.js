@@ -43,7 +43,7 @@ router.get("/:id", async (req, res) => {
       maybeUser.id = generateRandomId()
       db.data.users.push(maybeUser)
       await db.write()
-      res.sendStatus(200)
+      res.send({ id: maybeUser.id })
     } else {
   
   
@@ -76,7 +76,7 @@ router.get("/:id", async (req, res) => {
       return;
     }
 
-    UpdatedUser.id = generateRandomId()
+    
     db.data.users[originalUserIndex] = UpdatedUser
     await db.write()
     res.sendStatus(200)

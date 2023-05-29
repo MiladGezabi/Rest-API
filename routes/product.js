@@ -49,7 +49,7 @@ router.post("/", async (req, res) => {
     maybeProduct.id = generateRandomId()
     db.data.products.push(maybeProduct)
     await db.write()
-    res.sendStatus(200)
+    res.send({ id: maybeProduct.id })
   } else {
 
 
@@ -82,7 +82,7 @@ router.put("/:id", async (req, res) => {
     return
   }
 
-  updatedProduct.id = generateRandomId()
+  
   db.data.products[originalProductIndex] = updatedProduct
   await db.write()
   res.sendStatus(200)

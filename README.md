@@ -14,18 +14,36 @@ Exempel på svar:
     "id": 1,
     "name": "Produkt 1",
     "price": 199
+    "image": "http//url",
+    "tags": [ "string" "string" ]
   },
   {
     "id": 2,
     "name": "Produkt 2",
     "price": 299,
-    "image": ,
-    "tags": [string]
+    "image": "https//url",
+    "tags": [ "string" "string" ]
 
   },
   ...
 ]
 
+### GET /api/products/:id
+
+Returnerar den produkten med den id som efterfrågas.
+
+
+### POST /api/products
+
+Tar in och sparar en produkt i api:et.
+
+### PUT /api/products/:id
+
+Tar in ändringar för en produkt.
+
+### Delete /api/products/:id
+
+Tar bort en product.
 
 ## Användare
 
@@ -47,6 +65,23 @@ Exempel på svar:
     "password": "user1"
   }
 ]
+
+### GET /api/products/:id
+
+Returnerar den usern med den id som efterfrågas.
+
+
+### POST /api/products
+
+Tar in och sparar en user i api:et.
+
+### PUT /api/products/:id
+
+Tar in ändringar för en user.
+
+### Delete /api/products/:id
+
+Tar bort en user.
 
 
 ## Sökning och sortering
@@ -78,9 +113,3 @@ Exempel på svar:
 ]
 
 
-
- GET /users: Retrieves all users.
- GET /users/:id: Retrieves a specific user by ID.
- POST /users: Creates a new user.
- PUT /users/:id: Updates a user with a specific ID.
- DELETE /users/:id: Deletes a user with a specific ID.
